@@ -1,0 +1,26 @@
+header{
+    position: relative;
+}
+#gui {
+    display: flex;
+    flex-direction: row;
+}
+.content { 
+    background-color: #fff;
+    display: inline-block;
+    flex: 1;
+}
+.content > * {
+    margin: 20px 10px;
+}
+.nav { grid-area: nav; }
+
+@media (max-width: 400px) {
+    #gui {
+        display: flex;
+        flex-direction: column;
+    }
+    .content { 
+        display: block;
+    }
+}

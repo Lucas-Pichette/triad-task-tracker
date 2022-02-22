@@ -1,0 +1,42 @@
+#search {
+    margin: 0px 10px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding:8px 12px;
+    align-items: center;
+    max-width: 500px;
+}
+
+
+#main-searchbar {
+    background-color: transparent;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    outline: none;
+    color: #111;
+    font-weight:500;
+    flex: 1;
+}
+
+.searchbar-search-icon {
+    /* Makes SVG gray. See: https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: invert(30%) sepia(8%) saturate(0%) hue-rotate(268deg) brightness(95%) contrast(78%);
+
+    height: 15px;
+    width: auto;
+}
+
+.searchbar-tag-icon {
+    /* Makes SVG gray. See: https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: invert(30%) sepia(8%) saturate(0%) hue-rotate(268deg) brightness(95%) contrast(78%);
+
+    color:#999;
+    height: 18px;
+    width: auto;
+    
+    cursor: pointer;
+}
+.searchbar-tag-icon:hover {
+    filter: invert(0%) sepia(27%) saturate(2441%) hue-rotate(329deg) brightness(89%) contrast(100%);
+}
