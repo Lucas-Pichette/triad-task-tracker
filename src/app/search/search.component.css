@@ -1,10 +1,15 @@
+:host {
+    display: inline-flex;
+    flex-grow: 4;
+}
+
 #search {
-    margin: 0px 10px 20px 10px;
-    display: flex;
-    justify-content: space-between;
     background-color: #f9f9f9;
     padding:8px 12px;
     align-items: center;
+    display: flex;
+    /* Since app-search gets automatically generated, we need it to stretch the full (or desired) width, then we can fill this to that */
+    width: 100%;
     max-width: 500px;
 }
 

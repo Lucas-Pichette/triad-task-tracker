@@ -1,3 +1,35 @@
 #route-home {
-    margin: 0px 10px 20px 10px;
+    padding: 0px 30px 10px 30px;
+}
+
+#tasks-display-main {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#tasks-display-main li {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    margin: 10px 0;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.task .spacer {
+    flex: 1;
+    flex-grow: 4;
+}
+.task svg.delete-icon {
+    /* Makes SVG light red. See: https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: invert(64%) sepia(6%) saturate(3135%) hue-rotate(306deg) brightness(102%) contrast(103%);
+
+    height: 12px;
+    width: auto;
+    cursor: pointer;
+}
+.task svg.delete-icon:hover {
+    filter: invert(30%) sepia(60%) saturate(2298%) hue-rotate(332deg) brightness(82%) contrast(106%);
 }
