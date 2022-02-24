@@ -2,6 +2,8 @@ name: PRODUCTION - Upload Website
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 jobs:
   deploy:
