@@ -1,4 +1,4 @@
-name: Upload Website
+name: Dev - Upload Website
 on:
   push:
     branches: [ master, dev/* ]

@@ -1,7 +1,7 @@
-name: Upload Website
+name: PRODUCTION - Upload Website
 on:
   push:
-    branches: [ master, dev/* ]
+    branches: [ master ]
 
 jobs:
   deploy:
