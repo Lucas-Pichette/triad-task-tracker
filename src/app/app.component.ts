@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'triad-task-tracker';
+  title: string = 'Triad Task Tracker';
 }
