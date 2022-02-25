@@ -1,0 +1,32 @@
+<div id="route-home">
+    <h1 style="margin-bottom:0;">Tasks</h1>
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h2 style="display:inline-block;margin-bottom:10px;">Subject</h2>
+        <div style="display:inline-block;font-size:32px;">
+            =
+        </div>
+    </div>
+
+    <button id="open-new-task-modal" (click)=new_task_modal()>
+        <svg id="new-task-plus-icon" style="transform:rotate(0deg);" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
+        <span class="text">New Task</span>
+    </button>
+
+    <div id="new-task-modal" style="display:none;">
+        <input id="new-task-name" type="text" placeholder="Enter task name...">
+        <div id="create-task-button" (click)=create_new_task()>
+            <span>Create</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+        </div>
+    </div>
+
+    <ul id="tasks-display-main">
+        <li class="task" [ngClass]="{'task-completed': task.completed}" *ngFor="let task of tasks">
+            <input type="checkbox" [checked]="task.completed" (click)=update_task(task.id)>
+            <span style="margin:10px 0 10px 15px;">{{task.name}}</span>
+            <div class="spacer"></div>
+            <svg class="delete-icon" (click)=delete_task(task.id) xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M135.2 17.69C140.6 6.848 151.7 0 163.8 0H284.2C296.3 0 307.4 6.848 312.8 17.69L320 32H416C433.7 32 448 46.33 448 64C448 81.67 433.7 96 416 96H32C14.33 96 0 81.67 0 64C0 46.33 14.33 32 32 32H128L135.2 17.69zM31.1 128H416V448C416 483.3 387.3 512 352 512H95.1C60.65 512 31.1 483.3 31.1 448V128zM111.1 208V432C111.1 440.8 119.2 448 127.1 448C136.8 448 143.1 440.8 143.1 432V208C143.1 199.2 136.8 192 127.1 192C119.2 192 111.1 199.2 111.1 208zM207.1 208V432C207.1 440.8 215.2 448 223.1 448C232.8 448 240 440.8 240 432V208C240 199.2 232.8 192 223.1 192C215.2 192 207.1 199.2 207.1 208zM304 208V432C304 440.8 311.2 448 320 448C328.8 448 336 440.8 336 432V208C336 199.2 328.8 192 320 192C311.2 192 304 199.2 304 208z"/></svg>
+        </li>
+    </ul>
+
+</div>

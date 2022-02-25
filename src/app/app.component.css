@@ -1,0 +1,36 @@
+header {
+    position: relative;
+}
+footer {
+    background-color: #f3f3f3;
+}
+#gui {
+    display: flex;
+    flex-direction: row;
+}
+.content { 
+    background-color: #fff;
+    display: inline-flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+}
+.content > * {
+    padding: 10px 60px;
+}
+.nav { grid-area: nav; }
+.content > .content-spacer {
+    display: flex;
+    flex-grow: 4;
+    flex: 1;
+}
+
+@media (max-width: 400px) {
+    #gui {
+        display: flex;
+        flex-direction: column;
+    }
+    .content { 
+        display: block;
+    }
+}
