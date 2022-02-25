@@ -39,9 +39,10 @@ export class HomeComponent implements OnInit {
 
   public sort_tasks(): void {
     // sort in reversed order, since completed (1) should be on bottom instead of top
-    this.tasks.reverse(function(x: Task, y: Task) {
+    this.tasks.sort(function(x: Task, y: Task) {
       return Number(x.completed) - Number(y.completed);
     });
+    this.tasks.reversed();
   }
 
   public update_task(id: number) {
