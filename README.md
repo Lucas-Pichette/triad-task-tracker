@@ -1,4 +1,9 @@
 # Triad Task Tracker (TTT)
-
-[![build status](https://github.com/coryrylan/angular-github-actions/workflows/Build/badge.svg)](https://github.com/coryrylan/angular-github-actions/actions)
-
+  
+This is a fully serverless tool, with all dependencies (at least those made by myself), being fully serverless.  
+  
+Due to lack of time, the component specs/tests aren't as verbose as I'd like, but I'm glad I was able to focus and complete a lot of the DevOps environment that I had wanted to.  
+  
+The website itself is made using Angular, tests are done with Karma, and Continuous Integration is done using GitHub Actions, and Continuous Deployment is also done using GitHub Actions.  
+  
+Thank you for actually reading the README.md, haha.

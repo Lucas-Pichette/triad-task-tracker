@@ -5,13 +5,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TaskDataService {
-  API_URL = 'https://pokeapi.co/api/v2/pokemon';
+  API_URL = 'http://34.221.191.169:8000/tasks/';
   tasks: any;
 
   constructor(private http: HttpClient) { }
   //response.hasOwnProperty('results')
   public getTasks() {
-    this.tasks = this.http.get(`${this.API_URL}?limit=10`);
+    this.tasks = this.http.get(`${this.API_URL}`);
     return this.tasks;
   }
 }

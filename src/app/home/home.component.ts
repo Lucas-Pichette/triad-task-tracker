@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.taskDataService.getTasks()
       .subscribe((response: any) => {
-        this.tasks = response.results;
+        this.tasks = response;
+        console.log(this.tasks);
       });
   }
 }
