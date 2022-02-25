@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
       this.subscription = source.subscribe(val => this.taskDataService.getTasks()
         .subscribe((response: any) => {
           this.tasks = response;
+          this.sort_tasks();
         }));
   }
 
@@ -79,6 +80,7 @@ export class HomeComponent implements OnInit {
         this.taskDataService.getTasks()
           .subscribe((response: any) => {
             this.tasks = response;
+            this.sort_tasks();
           });
       });
     
@@ -90,6 +92,7 @@ export class HomeComponent implements OnInit {
         this.taskDataService.getTasks()
           .subscribe((response: any) => {
             this.tasks = response;
+            this.sort_tasks();
           });
       });
 
