@@ -29,8 +29,8 @@ export class HomeComponent implements OnInit {
         this.sort_tasks();
       });
       
-      //emit value in sequence every 10 second
-      const source = interval(20000);
+      //emit value in sequence every 10 seconds
+      const source = interval(10000);
       this.subscription = source.subscribe(val => this.taskDataService.getTasks()
         .subscribe((response: any) => {
           this.tasks = response;
@@ -49,8 +49,9 @@ export class HomeComponent implements OnInit {
   public update_task(id: number) {
     this.taskDataService.updateTaskCompletion(id)
       .subscribe((response: any) => {
-        this.sort_tasks();
+        
       });
+    this.sort_tasks();
   }
 
   public new_task_modal(): void {
@@ -80,10 +81,9 @@ export class HomeComponent implements OnInit {
         this.taskDataService.getTasks()
           .subscribe((response: any) => {
             this.tasks = response;
-            this.sort_tasks();
           });
       });
-    
+    this.sort_tasks();
   }
 
   public delete_task(id: number): void {
@@ -92,9 +92,8 @@ export class HomeComponent implements OnInit {
         this.taskDataService.getTasks()
           .subscribe((response: any) => {
             this.tasks = response;
-            this.sort_tasks();
           });
       });
-
+    this.sort_tasks();
   }
 }
