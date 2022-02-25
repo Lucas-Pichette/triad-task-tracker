@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 import { TaskDataService } from '../task-data.service';
 
+import { interval, Subscription } from 'rxjs';
+
+export interface Task {
+  id: number,
+  name: string,
+  completed: boolean
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,6 +17,8 @@ import { TaskDataService } from '../task-data.service';
 })
 export class HomeComponent implements OnInit {
   tasks: any;
+  visible_tasks: any;
+  subscription!: Subscription;
 
   constructor(private taskDataService: TaskDataService) { }
 
@@ -16,14 +26,28 @@ export class HomeComponent implements OnInit {
     this.taskDataService.getTasks()
       .subscribe((response: any) => {
         this.tasks = response;
-        console.log(this.tasks);
+        this.sort_tasks();
       });
+      
+      //emit value in sequence every 10 second
+      const source = interval(20000);
+      this.subscription = source.subscribe(val => this.taskDataService.getTasks()
+        .subscribe((response: any) => {
+          this.tasks = response;
+        }));
+  }
+
+  public sort_tasks(): void {
+    // sort in reversed order, since completed (1) should be on bottom instead of top
+    this.tasks.reverse(function(x: Task, y: Task) {
+      return Number(x.completed) - Number(y.completed);
+    });
   }
 
   public update_task(id: number) {
     this.taskDataService.updateTaskCompletion(id)
       .subscribe((response: any) => {
-        
+        this.sort_tasks();
       });
   }
 

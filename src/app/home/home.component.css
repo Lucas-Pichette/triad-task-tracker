@@ -112,3 +112,9 @@
 .task svg.delete-icon:hover {
     filter: invert(30%) sepia(60%) saturate(2298%) hue-rotate(332deg) brightness(82%) contrast(106%);
 }
+.task-completed {
+    opacity: .7;
+}
+.task-completed > span {
+    text-decoration: line-through;
+}
