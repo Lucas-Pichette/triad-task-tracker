@@ -14,4 +14,22 @@ export class TaskDataService {
     this.tasks = this.http.get(`${this.API_URL}`);
     return this.tasks;
   }
+
+  public deleteTask(id: number) {
+    console.log("DELETING TASK: ", id);
+    let headers = {body: `{"id":"${id}"}`};
+    return this.http.delete(`${this.API_URL}`, headers);
+  }
+
+  public updateTaskCompletion(id: number) {
+    console.log("UPDATING TASK: ", id);
+    let body = `{"id":"${id}"}`;
+    return this.http.patch(`${this.API_URL}`, body);
+  }
+
+  public createTask(name: string) {
+    console.log("CREATING TASK: ", name);
+    let body = `{"name":"${name}","completed":"False"}`;
+    return this.http.post(`${this.API_URL}`, body);
+  }
 }

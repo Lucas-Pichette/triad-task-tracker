@@ -1,5 +1,5 @@
 #route-home {
-    padding: 0px 30px 10px 30px;
+    padding: 0px 60px 10px 60px;
 }
 
 #tasks-display-main {
@@ -11,6 +11,85 @@
     padding: 10px 20px;
     background-color: #f9f9f9;
     margin: 10px 0;
+}
+
+#open-new-task-modal {
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+    background-color: #8000ff;
+    height: 50px;
+    width: 50px;
+    border: 1px solid transparent;
+    cursor: pointer; 
+}
+#open-new-task-modal:hover {
+    border-radius: 25px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    padding: 0px 20px;
+    width: 160px;
+    justify-content: space-around;
+}
+#open-new-task-modal:hover > span.text {
+    width: 120px;
+}
+#open-new-task-modal > span.text {
+    transition: all 0.5s ease-in-out;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+
+    width: 0px;
+}
+#open-new-task-modal > svg{
+    /*filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(174deg) brightness(102%) contrast(102%);*/
+    filter: invert(92%) sepia(26%) saturate(1305%) hue-rotate(187deg) brightness(108%) contrast(101%);
+    height:22px;
+    width:auto;
+}
+
+#new-task-modal {
+    background-color: #f3f3f3;
+    justify-content: space-between;
+
+    padding: 12px 20px;
+    margin: 16px 0 40px 0;
+}
+
+#new-task-modal input {
+    background-color: white;
+    color: #333;
+    border: 1px solid transparent;
+    flex: 1;
+    flex-grow: 4;
+    margin-right: 100px;
+}
+
+#create-task-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+#create-task-button > span {
+    font-weight: 500;
+}
+#create-task-button > svg {
+    transition: all 0.3s ease-in-out;
+    margin-left: 6px;
+    height:16px;
+    width:auto;
+}
+#create-task-button:hover > svg {
+    margin-left: 9px;
 }
 
 .task {

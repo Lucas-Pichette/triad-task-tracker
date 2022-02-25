@@ -16,7 +16,7 @@ footer {
     min-height: 100vh;
 }
 .content > * {
-    padding: 10px 30px;
+    padding: 10px 60px;
 }
 .nav { grid-area: nav; }
 .content > .content-spacer {
