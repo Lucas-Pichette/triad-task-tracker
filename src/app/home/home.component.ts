@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ChangeDetectionStrategy } from '@angular/core';
 import { TaskDataService } from '../task-data.service';
 
 import { interval, Subscription } from 'rxjs';
@@ -13,7 +13,8 @@ export interface Task {
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class HomeComponent implements OnInit {
   tasks: any;
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
   }
 
   public sort_tasks(): void {
+    console.log('sorted!');
     // sort in reversed order, since completed (1) should be on bottom instead of top
     this.tasks.sort(function(x: Task, y: Task) {
       return Number(x.completed) - Number(y.completed);
